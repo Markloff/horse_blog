@@ -12,11 +12,11 @@ exports[`TagsTemplate renders correctly 1`] = `
           <a
             href="/"
           >
-            John Doe
+            Manoko Group
           </a>
         </h2>
         <p>
-          Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.
+          年轻人，愿你照耀中国
         </p>
       </div>
       <nav>
@@ -32,14 +32,14 @@ exports[`TagsTemplate renders correctly 1`] = `
             <a
               href="/pages/about"
             >
-              About Me
+              About Us
             </a>
           </li>
           <li>
             <a
               href="/pages/contacts"
             >
-              Contact Me
+              Contact Us
             </a>
           </li>
         </ul>

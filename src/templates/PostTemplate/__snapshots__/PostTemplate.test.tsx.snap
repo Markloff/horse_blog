@@ -26,20 +26,20 @@ exports[`PostTemplate renders correctly 1`] = `
       <div>
         <p>
           Published
-           
+
           Sep 1, 2016
         </p>
       </div>
       <div>
         <p>
-          Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.
+          年轻人，愿你照耀中国
           <a
             href="https://www.twitter.com/#"
             rel="noopener noreferrer"
             target="_blank"
           >
             <strong>
-              John Doe
+              Manoko Group
             </strong>
              on Twitter
           </a>
