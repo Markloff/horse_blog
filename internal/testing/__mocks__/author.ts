@@ -2,7 +2,7 @@ import contacts from "./contacts";
 
 export default {
   photo: "/photo.jpg",
-  bio: "Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.",
-  name: "John Doe",
+  bio: "年轻人，愿你照耀中国",
+  name: "Manoko Group",
   contacts,
 };

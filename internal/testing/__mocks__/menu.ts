@@ -1,5 +1,5 @@
 export default [
   { label: "Articles", path: "/" },
-  { label: "About Me", path: "/pages/about" },
-  { label: "Contact Me", path: "/pages/contacts" },
+  { label: "About Us", path: "/pages/about" },
+  { label: "Contact Us", path: "/pages/contacts" },
 ];

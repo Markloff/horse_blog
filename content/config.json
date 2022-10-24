@@ -1,7 +1,7 @@
 {
-  "title": "Blog by John Doe",
-  "url": "https://lumen.alxshelepenok.com",
-  "subtitle": "Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.",
+  "title": "Blog by Manoko Group",
+  "url": "https://natulata.com",
+  "subtitle": "年轻人，愿你照耀中国",
   "copyright": "© All rights reserved.",
   "googleAnalyticsId": "UA-73379983-2",
   "disqusShortname": "",
@@ -13,18 +13,18 @@
       "path": "/"
     },
     {
-      "label": "About me",
+      "label": "About us",
       "path": "/pages/about"
     },
     {
-      "label": "Contact me",
+      "label": "Contact us",
       "path": "/pages/contacts"
     }
   ],
   "author": {
-    "name": "John Doe",
+    "name": "Manoko Group",
     "photo": "/photo.jpg",
-    "bio": "Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.",
+    "bio": "年轻人，愿你照耀中国",
     "contacts": {
       "rss": "",
       "email": "",

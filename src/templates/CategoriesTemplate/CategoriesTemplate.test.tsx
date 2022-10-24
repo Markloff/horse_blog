@@ -32,16 +32,12 @@ describe("CategoriesTemplate", () => {
     reactTestingLibraryRender(<GatsbyHead />);
 
     expect(getMeta("twitter:card")).toEqual("summary_large_image");
-    expect(getMeta("twitter:title")).toEqual("Categories - Blog by John Doe");
-    expect(getMeta("og:title")).toEqual("Categories - Blog by John Doe");
-    expect(getMeta("description")).toEqual(
-      "Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.",
+    expect(getMeta("twitter:title")).toEqual(
+      "Categories - Blog by Manoko Group",
     );
-    expect(getMeta("og:description")).toEqual(
-      "Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.",
-    );
-    expect(getMeta("twitter:description")).toEqual(
-      "Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.",
-    );
+    expect(getMeta("og:title")).toEqual("Categories - Blog by Manoko Group");
+    expect(getMeta("description")).toEqual("年轻人，愿你照耀中国");
+    expect(getMeta("og:description")).toEqual("年轻人，愿你照耀中国");
+    expect(getMeta("twitter:description")).toEqual("年轻人，愿你照耀中国");
   });
 });

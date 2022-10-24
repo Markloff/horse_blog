@@ -14,14 +14,14 @@ exports[`Menu renders correctly 1`] = `
       <a
         href="/pages/about"
       >
-        About Me
+        About Us
       </a>
     </li>
     <li>
       <a
         href="/pages/contacts"
       >
-        Contact Me
+        Contact Us
       </a>
     </li>
   </ul>

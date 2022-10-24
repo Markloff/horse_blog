@@ -37,17 +37,13 @@ describe("IndexTemplate", () => {
 
     expect(getMeta("twitter:card")).toEqual("summary_large_image");
     expect(getMeta("twitter:title")).toEqual(
-      "Posts - Page 2 - Blog by John Doe",
+      "Posts - Page 2 - Blog by Manoko Group",
     );
-    expect(getMeta("og:title")).toEqual("Posts - Page 2 - Blog by John Doe");
-    expect(getMeta("description")).toEqual(
-      "Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.",
+    expect(getMeta("og:title")).toEqual(
+      "Posts - Page 2 - Blog by Manoko Group",
     );
-    expect(getMeta("twitter:description")).toEqual(
-      "Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.",
-    );
-    expect(getMeta("og:description")).toEqual(
-      "Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.",
-    );
+    expect(getMeta("description")).toEqual("年轻人，愿你照耀中国");
+    expect(getMeta("twitter:description")).toEqual("年轻人，愿你照耀中国");
+    expect(getMeta("og:description")).toEqual("年轻人，愿你照耀中国");
   });
 });
