@@ -21,57 +21,6 @@ $ npm install
 $ npm run start
 ```
 
-## Folder Structure
-
-```
-.
-├── internal
-│   ├── definitions
-│   ├── gatsby
-│   │   ├── constants
-│   │   ├── queries
-│   │   ├── types
-│   │   └── utils
-│   └── testing
-│       └── __mocks__
-└── src
-    ├── assets
-    │   └── scss
-    │       ├── base
-    │       └── mixins
-    ├── components
-    │   ├── Feed
-    │   ├── Icon
-    │   ├── Image
-    │   ├── Layout
-    │   ├── Page
-    │   ├── Pagination
-    │   ├── Post
-    │   │   ├── Author
-    │   │   ├── Comments
-    │   │   ├── Content
-    │   │   ├── Meta
-    │   │   └── Tags
-    │   └── Sidebar
-    │       ├── Author
-    │       ├── Contacts
-    │       ├── Copyright
-    │       └── Menu
-    ├── constants
-    ├── hooks
-    ├── templates
-    │   ├── CategoriesTemplate
-    │   ├── CategoryTemplate
-    │   ├── IndexTemplate
-    │   ├── NotFoundTemplate
-    │   ├── PageTemplate
-    │   ├── PostTemplate
-    │   ├── TagsTemplate
-    │   └── TagTemplate
-    ├── types
-    └── utils
-```
-
 ## License
 
 The MIT License (MIT)
