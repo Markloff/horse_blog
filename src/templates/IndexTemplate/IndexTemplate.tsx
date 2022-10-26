@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo, useState } from "react";
 
 import { graphql } from "gatsby";
 
@@ -7,6 +7,7 @@ import { Layout } from "@/components/Layout";
 import { Meta } from "@/components/Meta";
 import { Page } from "@/components/Page";
 import { Pagination } from "@/components/Pagination";
+import Search from "@/components/Search";
 import { Sidebar } from "@/components/Sidebar";
 import { useSiteMetadata } from "@/hooks";
 import { AllMarkdownRemark, PageContext } from "@/types";
@@ -21,13 +22,35 @@ interface Props {
 const IndexTemplate: React.FC<Props> = ({ data, pageContext }: Props) => {
   const { pagination } = pageContext;
   const { hasNextPage, hasPrevPage, prevPagePath, nextPagePath } = pagination;
+  const [query, setQuery] = useState<string>("");
 
-  const { edges } = data.allMarkdownRemark;
+  const handleQueryChange = (newQuery: string) => {
+    setQuery(newQuery);
+  };
+
+  const edges = useMemo(() => {
+    if (!query || !window.__LUNR__) {
+      return data.allMarkdownRemark.edges;
+    }
+    const lunrIndex = window.__LUNR__.zh;
+    const searchResult = lunrIndex.index
+      .search(query)
+      .map(({ ref }) => lunrIndex.store[ref]);
+    const set = new Set();
+    searchResult.forEach((item) => set.add(item.slug));
+    return data.allMarkdownRemark.edges.filter(
+      (edge) =>
+        set.has(edge.node.frontmatter.slug) ||
+        edge.node.frontmatter.title.includes(query) ||
+        edge.node.frontmatter.description?.includes(query),
+    );
+  }, [query, data.allMarkdownRemark]);
 
   return (
     <Layout>
       <Sidebar isIndex />
       <Page>
+        <Search onChange={handleQueryChange} />
         <Feed edges={edges} />
         <Pagination
           prevPagePath={prevPagePath}

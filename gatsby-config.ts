@@ -199,5 +199,78 @@ export default {
     "gatsby-plugin-catch-links",
     "gatsby-plugin-optimize-svgs",
     "gatsby-plugin-sass",
+    /*
+     * {
+     *   resolve: "gatsby-plugin-local-search",
+     *   options: {
+     *     name: "pages",
+     *     engine: "lunr",
+     *     query: `
+     *       {
+     *         allMarkdownRemark(
+     *           limit: 1000
+     *           sort: {order: DESC, fields: [frontmatter___date]}
+     *           filter: {frontmatter: {template: {eq: "post"}, draft: {ne: true}}}
+     *         ) {
+     *             nodes {
+     *             id
+     *             frontmatter {
+     *               slug
+     *               title
+     *             }
+     *             rawMarkdownBody
+     *           }
+     *         }
+     *       }
+     *     `,
+     *     ref: "id",
+     *     index: ["title", "content", "path"],
+     *     store: ["title", "content", "id"],
+     *     normalizer: ({
+     *       data: { allMarkdownRemark },
+     *     }: {
+     *       data: {
+     *         allMarkdownRemark: {
+     *           nodes: Array<types.Node>;
+     *         };
+     *       };
+     *     }) =>
+     *       allMarkdownRemark.nodes.map((node) => ({
+     *         id: node.id,
+     *         path: node.frontmatter?.slug || "",
+     *         title: node.frontmatter?.title || "",
+     *         content: node.rawMarkdownBody,
+     *       })),
+     *   },
+     * },
+     */
+    {
+      resolve: "gatsby-plugin-lunr",
+      options: {
+        languages: [{ name: "zh" }],
+        /*
+         * Fields to index. If store === true value will be stored in index file.
+         * Attributes for custom indexing logic. See https://lunrjs.com/docs/lunr.Builder.html for details
+         */
+        fields: [
+          { name: "id" },
+          { name: "title", store: true, attributes: { boost: 5 } },
+          { name: "desc", store: true, attributes: { boost: 5 } },
+          { name: "slug", store: true },
+          { name: "content", store: true, attributes: { boost: 20 } },
+        ],
+        // How to resolve each field's value for a supported node type
+        resolvers: {
+          // 这里修改成你的gatsby数据节点，根据这些数据形成索引(index)
+          MarkdownRemark: {
+            id: (node: types.Node) => node.id,
+            title: (node: types.Node) => node.frontmatter?.title || "",
+            desc: (node: types.Node) => node.frontmatter?.description || "",
+            slug: (node: types.Node) => node.frontmatter?.slug || "",
+            content: (node: types.Node) => node.rawMarkdownBody,
+          },
+        },
+      },
+    },
   ],
 };

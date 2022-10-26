@@ -8,4 +8,11 @@ interface Node {
   html: string;
 }
 
+export interface MarkdownRemark {
+  content: string;
+  desc: string;
+  slug: string;
+  title: string;
+}
+
 export default Node;

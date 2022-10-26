@@ -1,0 +1,31 @@
+
+.search_wrapper {
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.search_icon {
+  left: 8px;
+  position: absolute;
+  top: 8px;
+}
+
+.search_input {
+  background-color: #f1f3f4;
+  border: 2px solid #DFE1E6;
+  border-radius: 6px;
+  box-shadow: none;
+  box-sizing: border-box;
+  color: #6B778C;
+  font-size: 14px;
+  height: 32px;
+  line-height: 20px;
+  outline: 0;
+  padding: 0 12px 0 30px;
+  transition: all ease-in-out 0.3s;
+  width: 100%;
+  &:focus {
+    background-color: #FFFFFF;
+    border: 2px solid rgba(255, 215, 0, 0.87);
+  }
+}
