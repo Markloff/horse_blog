@@ -199,51 +199,6 @@ export default {
     "gatsby-plugin-catch-links",
     "gatsby-plugin-optimize-svgs",
     "gatsby-plugin-sass",
-    /*
-     * {
-     *   resolve: "gatsby-plugin-local-search",
-     *   options: {
-     *     name: "pages",
-     *     engine: "lunr",
-     *     query: `
-     *       {
-     *         allMarkdownRemark(
-     *           limit: 1000
-     *           sort: {order: DESC, fields: [frontmatter___date]}
-     *           filter: {frontmatter: {template: {eq: "post"}, draft: {ne: true}}}
-     *         ) {
-     *             nodes {
-     *             id
-     *             frontmatter {
-     *               slug
-     *               title
-     *             }
-     *             rawMarkdownBody
-     *           }
-     *         }
-     *       }
-     *     `,
-     *     ref: "id",
-     *     index: ["title", "content", "path"],
-     *     store: ["title", "content", "id"],
-     *     normalizer: ({
-     *       data: { allMarkdownRemark },
-     *     }: {
-     *       data: {
-     *         allMarkdownRemark: {
-     *           nodes: Array<types.Node>;
-     *         };
-     *       };
-     *     }) =>
-     *       allMarkdownRemark.nodes.map((node) => ({
-     *         id: node.id,
-     *         path: node.frontmatter?.slug || "",
-     *         title: node.frontmatter?.title || "",
-     *         content: node.rawMarkdownBody,
-     *       })),
-     *   },
-     * },
-     */
     {
       resolve: "gatsby-plugin-lunr",
       options: {
